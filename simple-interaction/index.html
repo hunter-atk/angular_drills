@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
     <meta charset="utf-8">
-    <title>Angular Drill</title>
+    <title>Data Binding</title>
   </head>
   <body>
-
+    <app></app>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.js"></script>
+    <script>
+      angular.module('app', [])
+        .component('app', {
+          controller: function () {
+            const vm = this
+            vm.$onInit = function () {
+              vm.fullName = '';
+              vm.firstName = '';
+              vm.nickName = '';
+              vm.lastName = '';
+            }
+            vm.updateName = function () {
+              if(vm.nickName){
+                vm.fullName = vm.firstName + " '" + vm.nickName + "' " + vm.lastName;
+              } else {
+                vm.fullName = vm.firstName + " " + vm.lastName;
+               }
+            }
+          },
+          template: `
+            <h1>My name is: {{$ctrl.fullName}}</h1>
+            <p>First Name: <input ng-model="$ctrl.firstName" name="First Name" type="text" placeholder="First Name"></p>
+            <p>Nickname: <input ng-model="$ctrl.nickName" name="Nickname" type="text" placeholder="Nickname"></p>
+            <p>Last name: <input ng-model="$ctrl.lastName" name="Last Name" type="text" placeholder="Last Name"></p>
+            <p><input type="submit" value="Update Name" ng-click="$ctrl.updateName()" /></p>
+          `
+        })
+    </script>
   </body>
 </html>
