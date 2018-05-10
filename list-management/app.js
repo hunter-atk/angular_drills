@@ -24,7 +24,7 @@
         const vm = this;
 
         vm.$onInit = function () {
-          vm.items = []
+          vm.items = [{name: "oranges", quantity: 5}, {name: "bananas", quantity: 8}]
         }
 
         vm.addItem = function () {
