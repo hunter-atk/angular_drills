@@ -1,4 +1,3 @@
-
 {
   "name": "angular-drill",
   "version": "1.0.0",
@@ -17,11 +16,11 @@
     "express": "^4.14.0",
     "mocha": "^2.5.3",
     "protractor": "latest",
-    "protractor-jasmine2-screenshot-reporter": "latest",
+    "protractor-jasmine2-screenshot-reporter": "latest"
   },
   "dependencies": {
     "angular": "^1.6.0",
-    "angular-moment": "^1.0.1",
+    "angular-moment": "^1.2.0",
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "moment": "^2.17.1"
